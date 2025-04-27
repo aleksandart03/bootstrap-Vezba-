@@ -1,0 +1,216 @@
+body {
+    background-color: #0000000e;
+}
+
+.navbar {
+    transition: background-color 0.3s ease;
+}
+
+.navbar:hover {
+    background-color: #495057;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav .dropdown-menu {
+    background-color: #000;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .dropdown-item {
+    color: #fff;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: #333;
+    color: #FFD700;
+    cursor: pointer;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FFD700 !important;
+}
+
+.navbar-toggler-icon {
+    background-color: black;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.d-flex a {
+    font-size: 20px;
+    color: #343a40;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.d-flex a:hover {
+    color: #FFD700;
+    transform: scale(1.2); 
+}
+
+.page-item .page-link {
+    color: #fff !important;
+    background-color: #333 !important;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 15px 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.page-item .page-link:hover {
+    background-color: #FFD700 !important;
+    color: #333 !important;
+    transform: scale(1.1);
+}
+
+.page-item.active .page-link {
+    background-color: #000 !important;
+    color: #FFD700 !important;
+    font-weight: bold;
+}
+
+.page-item .page-link[aria-label="Prethodna"],
+.page-item .page-link[aria-label="Sledeća"] {
+    padding: 12px 20px;
+    font-size: 18px;
+}
+
+.pagination .page-item {
+    margin: 0 4px;
+}
+
+@media (max-width: 576px) {
+    .pagination {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .pagination .page-item .page-link {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .pagination .page-item:not(:first-child):not(:last-child) {
+        display: none;
+    }
+}
+
+.navbar-brand {
+    margin-left: 20px;
+}
+
+.navbar-nav {
+    flex-grow: 1;
+}
+
+.search-box {
+    border-radius: 30px;
+    border: 1px solid #ccc;
+}
+
+.custom-card {
+    width: 500px;
+    height: 100%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+    transform: scale(1.01); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+
+.add-to-cart-btn {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #f39c12; 
+    transform: scale(1.1); 
+}
+
+.col-md-4 {
+    display: flex;
+    justify-content: center; 
+}
+
+.row {
+    justify-content: center;
+}
+
+.suggestion-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f1f1f1;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.social-icons a:hover i {
+    color: #ffcc00;
+    transform: scale(1.2);
+}
+
+.social-icons a:hover {
+    transform: scale(1.3);
+}
+
+.d-flex a {
+    font-size: 15px;
+    transition: transform 0.3s ease;
+}
+
+.d-flex a:hover {
+    transform: scale(1.3); 
+}
