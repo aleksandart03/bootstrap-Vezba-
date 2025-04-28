@@ -41,21 +41,24 @@
                 </ul>
 
                 <div class="d-flex align-items-center ms-auto">
-                    <a href="mailto:email@example.com" class="text-white ms-3" title="Pošaljite e-mail">
-                        <i class="bi bi-envelope-fill"></i>
-                    </a>
-                    <a href="tel:+1234567890" class="text-white ms-3" title="Pozovite nas">
-                        <i class="bi bi-telephone-fill"></i>
-                    </a>
-                    <a href="cart.php" class="text-white ms-3" title="Vaša korpa">
+                    <?php if (isset($_SESSION['user'])): ?>
+                        <span class="text-white me-3">
+                            <i class="bi bi-person-fill"></i> <?php echo htmlspecialchars($_SESSION['user']['email']); ?>
+                        </span>
+                        <a href="/../Bootstrap(autocomplete)/public/logout.php" class="btn btn-outline-light btn-sm">Logout</a>
+                    <?php else: ?>
+                        <a href="/../Bootstrap(autocomplete)/public/login.php" class="btn btn-outline-light btn-sm me-2">Login</a>
+                        <a href="/../Bootstrap(autocomplete)/public/register.php" class="btn btn-warning btn-sm">Register</a>
+                    <?php endif; ?>
+
+
+                    <a href="/../Bootstrap(autocomplete)/public/cart.php" class="text-white ms-3" title="Vaša korpa">
                         <i class="bi bi-cart-fill"></i>
                     </a>
                 </div>
             </div>
         </div>
     </nav>
-
-
 
 
     <div class="container mt-4">
@@ -80,13 +83,17 @@
                             <p class="card-text"><?php echo htmlspecialchars($product['description']); ?></p>
                             <p class="card-text"><strong>Cena: </strong><?php echo htmlspecialchars($product['price']); ?> €</p>
 
-
-                            <form action="add_to_cart.php" method="POST" class="mt-auto">
-                                <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
+                            <form action="/bootstrap(autocomplete)/public/index.php?action=add_to_cart" method="POST" class="mt-auto">
+                                <input type="hidden" name="product_id" value="<?= $product['id']; ?>"> <!-- Popravljeno za duplikate -->
+                                <div class="mb-2">
+                                    <label for="quantity_<?= $product['id'] ?>" class="form-label">Količina:</label>
+                                    <input type="number" id="quantity_<?= $product['id'] ?>" name="quantity" value="1" min="1" max="20" class="form-control" style="width: 80px;">
+                                </div>
                                 <button type="submit" class="btn btn-warning w-100 add-to-cart-btn">
                                     <i class="bi bi-cart-plus"></i> Dodaj u korpu
                                 </button>
                             </form>
+
                         </div>
                     </div>
                 </div>
